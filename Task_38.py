@@ -51,18 +51,18 @@ def read_file_to_list(file_name):
     return contact_list
 
 def search_parameters():
-    print('По какому полю выполнить поиск?')
+    print('Как выполнить поиск?')
     search_field = input('1 - по фамилии\n2 - по имени\n3 - по номеру телефона\n')
     print()
     search_value = None
     if search_field == '1':
-        search_value = input('Введите фамилию для поиска: ')
+        search_value = input('Фамилия: ')
         print()
     elif search_field == '2':
-        search_value = input('Введите имя для поиска: ')
+        search_value = input('Имя: ')
         print()
     elif search_field == '3':
-        search_value = input('Введите номер для поиска: ')
+        search_value = input('Номер: ')
         print()
     return search_field, search_value
 
@@ -114,7 +114,7 @@ def change_phone_number(file_name):
     contact_list = read_file_to_list(file_name)
     number_to_change = search_to_modify(contact_list)
     contact_list.remove(number_to_change)
-    print('Какое поле вы хотите изменить?')
+    print('Что изменить?')
     field = input('1 - Фамилия\n2 - Имя\n3 - Номер телефона\n')
     if field == '1':
         number_to_change[0] = input('Введите фамилию: ')
